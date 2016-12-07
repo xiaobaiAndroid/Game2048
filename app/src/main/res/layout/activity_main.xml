@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.widget.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:padding="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_goal"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:textSize="40sp"
+            android:background="@drawable/orange_bg"
+            android:text="2048"
+            android:gravity="center"
+            android:layout_margin="3dp"
+            android:padding="3dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="3dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="总分"
+                android:gravity="center"
+                android:background="@drawable/gray_bg"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/gray_bg"
+                android:layout_alignParentBottom="true"
+                android:padding="3dp"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="3dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="最高成绩"
+                android:gravity="center"
+                android:background="@drawable/gray_bg"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_highScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="0"
+                android:gravity="center"
+                android:background="@drawable/gray_bg"
+                android:layout_alignParentBottom="true"
+                android:padding="3dp"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_game_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <com.bzf.easygame2048.main.widget.GameLayout
+                android:id="@+id/gl_game_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ></com.bzf.easygame2048.main.widget.GameLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:background="@android:color/white"
+    >
+
+    <Button
+        android:id="@+id/bt_revert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="退一步"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:background="@drawable/blue_button"
+        />
+
+    <Button
+        android:id="@+id/bt_restart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="重新开始"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:background="@drawable/blue_button"
+        android:layout_marginLeft="5dp"
+        />
+
+    <Button
+        android:id="@+id/bt_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="设置"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/blue_button"
+        />
+
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.bzf.easygame2048.options.OptionsActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:transitionName="animation_title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="每行或每列的方格数"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/bt_gameLines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textSize="20sp"
+        android:background="@drawable/blue_button"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="目标"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/bt_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="512"
+        android:textSize="20sp"
+        android:background="@drawable/blue_button"
+        android:layout_marginTop="5dp"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="clip_vertical"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        >
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="返回"
+            android:textSize="20sp"
+            android:background="@drawable/blue_button"
+            android:padding="3dp"
+            />
+
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定"
+            android:textSize="20sp"
+            android:background="@drawable/blue_button"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:id="@+id/bt_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="联系我"
+            android:textSize="20sp"
+            android:background="@drawable/blue_button"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
