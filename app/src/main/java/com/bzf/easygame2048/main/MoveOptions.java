@@ -1,7 +1,7 @@
 package com.bzf.easygame2048.main;
 
-import com.bzf.easygame2048.main.widget.GameItem;
-import com.bzf.easygame2048.utils.DisplayUtils;
+import com.bzf.easygame2048.main.widget.GameLayout;
+import com.bzf.easygame2048.commonutils.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +19,13 @@ public abstract class MoveOptions {
     /**作比较的值，和下一个小方格的值相等则需要合并*/
     protected int mTempItemNum = EMPTYVALUE;
 
-    /**
-     * 保存item的排列
-     */
-    protected GameItem[][] mGameMatrixs;
+    protected GameLayout mGameLayout;
 
     /**值得集合,保存一行或一列不为0的值*/
     protected List<Integer> mValueList = new ArrayList<Integer>();
 
-    public MoveOptions(GameItem[][] gameMatrixs){
-        mGameMatrixs = gameMatrixs;
+    public MoveOptions(GameLayout gameLayout){
+        mGameLayout = gameLayout;
     }
 
     /**移动*/

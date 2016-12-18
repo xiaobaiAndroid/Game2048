@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.bzf.easygame2048.R;
 import com.bzf.easygame2048.base.BaseActivity;
+import com.bzf.easygame2048.pk.BluetoothManager;
 
 public class NewOrJoinActivity extends BaseActivity {
 
@@ -19,20 +20,25 @@ public class NewOrJoinActivity extends BaseActivity {
         setContentView(R.layout.activity_new_or_join);
         initView();
         initListener();
+        initBluetooth();
+    }
+
+    private void initBluetooth() {
+        new BluetoothManager().openBluetooth();
     }
 
     private void initListener() {
         mBt_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NewOrJoinActivity.this,NewWifiActivity.class));
+                startActivity(new Intent(NewOrJoinActivity.this,ServiceActivity.class));
             }
         });
 
         mBt_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NewOrJoinActivity.this,JoinWifiActivity.class));
+                startActivity(new Intent(NewOrJoinActivity.this,ScanBluetoothActivity.class));
             }
         });
     }

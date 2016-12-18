@@ -1,4 +1,4 @@
-package com.bzf.easygame2048.utils;
+package com.bzf.easygame2048.commonutils;
 
 /**
  *配置类

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.test.ApplicationTestCase;
 
 import com.bzf.easygame2048.file.FileUtils;
-import com.bzf.easygame2048.utils.LogTool;
+import com.bzf.easygame2048.commonutils.LogTool;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>

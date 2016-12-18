@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.bzf.easygame2048.entrance.widget.EntranceActivity;
-import com.bzf.easygame2048.utils.Config;
+import com.bzf.easygame2048.commonutils.Config;
 
 /**
  * Created by baizhengfu
@@ -21,9 +21,6 @@ public class GameApplication extends Application{
     public static int GOAL;
 
     public static int HIGHSCROE;
-
-    /**分数*/
-    public static int SCORE = 0;
 
     /**模式：4X4 5X5 6X6*/
     public static int GAMELINES;
@@ -48,13 +45,14 @@ public class GameApplication extends Application{
         return ins;
     }
 
-    /**保存最高的成绩*/
-    public void saveHighScore() {
-        if(SCORE>HIGHSCROE){
-            HIGHSCROE = SCORE;
+    /**保存最高的成绩
+     * @param score*/
+    public void saveHighScore(int score) {
+        if(score>HIGHSCROE){
+            HIGHSCROE = score;
             SharedPreferences sp = getSharedPreferences("config",Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
-            editor.putInt("highScore",SCORE);
+            editor.putInt("highScore",score);
             editor.commit();
         }
     }

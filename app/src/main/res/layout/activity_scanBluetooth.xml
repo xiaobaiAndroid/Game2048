@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="com.bzf.easygame2048.pk.widget.NewWifiActivity">
+    tools:context=".pk.widget.ScanBluetoothActivity">
 
   <TextView
       android:id="@+id/tv_promptMessge"
@@ -13,7 +13,12 @@
       android:layout_height="wrap_content"
       android:textSize="18sp"
       android:textColor="@android:color/holo_blue_light"
-      android:text="创建热点中。。。"
+      android:text="扫描蓝牙设备中。。。"
       />
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_Bluetooth"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.bzf.easygame2048.utils.DimensionUtils;
+import com.bzf.easygame2048.commonutils.DimensionUtils;
 
 /**
  * 小方块

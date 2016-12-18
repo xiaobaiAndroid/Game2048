@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.bzf.easygame2048.GameApplication;
 import com.bzf.easygame2048.R;
 import com.bzf.easygame2048.options.widget.GameDialog;
-import com.bzf.easygame2048.utils.Config;
+import com.bzf.easygame2048.commonutils.Config;
 
 /**设置页面*/
 public class OptionsActivity extends AppCompatActivity {

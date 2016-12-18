@@ -14,9 +14,9 @@ import android.widget.GridLayout;
 import com.bzf.easygame2048.GameApplication;
 import com.bzf.easygame2048.main.MoveArithmetic;
 import com.bzf.easygame2048.main.MoveOptions;
-import com.bzf.easygame2048.utils.Config;
-import com.bzf.easygame2048.utils.DisplayUtils;
-import com.bzf.easygame2048.utils.LogTool;
+import com.bzf.easygame2048.commonutils.Config;
+import com.bzf.easygame2048.commonutils.DisplayUtils;
+import com.bzf.easygame2048.commonutils.LogTool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +55,11 @@ public class GameLayout extends GridLayout {
 
     private AlertDialog mAlertDialog;
 
+    /**
+     * 分数
+     */
+    private int mScore = 0;
+
 
     public GameLayout(Context context) {
         super(context);
@@ -72,7 +77,7 @@ public class GameLayout extends GridLayout {
         mHistoryScoreList = new ArrayList<Integer>();
         mHistoryItemsList = new ArrayList<int[][]>();
         mGameMatrixs = new GameItem[GameApplication.GAMELINES][GameApplication.GAMELINES];
-        mMoveOption = new MoveArithmetic(mGameMatrixs);
+        mMoveOption = new MoveArithmetic(this);
 
         setRowCount(GameApplication.GAMELINES);
         setColumnCount(GameApplication.GAMELINES);
@@ -157,15 +162,15 @@ public class GameLayout extends GridLayout {
                 mMoveOption.move(x - mDownX, y - mDownY);
                 if (isMove()) {
                     addRandomNum();
-                    mListenter.changeScore(GameApplication.SCORE);
+                    mListenter.changeScore(mScore);
                 }
                 int state = getOptionState();
                 Log.i("bzf", "state=" + state);
                 if (state == 0) {
-                    GameApplication.getIns().saveHighScore();
+                    GameApplication.getIns().saveHighScore(mScore);
                     showGameOverDialog();
                 } else if (state == 2) {
-                    GameApplication.getIns().saveHighScore();
+                    GameApplication.getIns().saveHighScore(mScore);
                     showfinishGoalDialog();
                 }
                 break;
@@ -206,7 +211,7 @@ public class GameLayout extends GridLayout {
     }
 
     private void showGameOverDialog() {
-        GameApplication.getIns().saveHighScore();
+        GameApplication.getIns().saveHighScore(mScore);
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("游戏结束,未达到目标");
         builder.setCancelable(false);
@@ -234,7 +239,7 @@ public class GameLayout extends GridLayout {
             }
         }
         mHistoryItemsList.add(mHistoryItems);
-        mHistoryScoreList.add(GameApplication.SCORE);
+        mHistoryScoreList.add(mScore);
     }
 
     /**
@@ -270,7 +275,7 @@ public class GameLayout extends GridLayout {
     }
 
     /**
-     * 是否还好可以合并的数字
+     * 是否还有可以合并的数字
      * @return
      */
     private boolean isHasMergeNum() {
@@ -342,8 +347,8 @@ public class GameLayout extends GridLayout {
             for (int i = 0; i < GameApplication.GAMELINES; i++) {
                 for (int j = 0; j < GameApplication.GAMELINES; j++) {
                     mGameMatrixs[i][j].setNumber(historyItems[i][j]);
-                    GameApplication.SCORE = historyScore;
-                    mListenter.changeScore(GameApplication.SCORE);
+                    mScore = historyScore;
+                    mListenter.changeScore(mScore);
                 }
             }
         }
@@ -354,8 +359,24 @@ public class GameLayout extends GridLayout {
      */
     public void restart() {
         initGameMatrix();
-        GameApplication.SCORE = 0;
-        mListenter.changeScore(GameApplication.SCORE);
+        mScore = 0;
+        mListenter.changeScore(mScore);
+    }
+
+    public GameItem[][] getmGameMatrixs() {
+        return mGameMatrixs;
+    }
+
+    public void setmGameMatrixs(GameItem[][] mGameMatrixs) {
+        this.mGameMatrixs = mGameMatrixs;
+    }
+
+    public int getmScore() {
+        return mScore;
+    }
+
+    public void setmScore(int mScore) {
+        this.mScore = mScore;
     }
 
     /**

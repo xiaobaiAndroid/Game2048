@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         initData();
     }
 
+    @Override
+    protected void onDestroy() {
+        GameApplication.getIns().saveHighScore(vGameLayout.getmScore());
+        super.onDestroy();
+    }
+
     private void initListener() {
         vGameLayout.setListenter(new GameLayout.GameListenter(){
 
@@ -97,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
         //获取历史数据，没有历史数据初始化为0
         vGoal.setText(String.valueOf(GameApplication.GOAL));
-        vScore.setText(String.valueOf(GameApplication.SCORE));
+        vScore.setText("0");
         vHighScore.setText(String.valueOf(GameApplication.HIGHSCROE));
     }
 
