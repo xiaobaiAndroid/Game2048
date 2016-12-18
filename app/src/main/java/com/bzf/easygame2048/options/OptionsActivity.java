@@ -17,7 +17,6 @@ public class OptionsActivity extends AppCompatActivity {
     private Button vGoal;
     private Button vConfirm;
     private Button vBack;
-    private Button vContact;
 
     private Integer[] mGameLinesArray ;
     private Integer[] mGameGoalArray ;
@@ -69,13 +68,6 @@ public class OptionsActivity extends AppCompatActivity {
             }
         });
 
-        vContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
     }
 
     private void selectGoal() {
@@ -116,6 +108,5 @@ public class OptionsActivity extends AppCompatActivity {
          vGoal =  (Button) findViewById(R.id.bt_goal);
         vBack = (Button) findViewById(R.id.bt_back);
         vConfirm = (Button) findViewById(R.id.bt_confirm);
-        vContact = (Button) findViewById(R.id.bt_contact);
     }
 }

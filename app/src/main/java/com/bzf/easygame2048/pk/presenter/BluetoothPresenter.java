@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import com.bzf.easygame2048.commonutils.LogTool;
 import com.bzf.easygame2048.pk.BluetoothManager;
 import com.bzf.easygame2048.pk.view.IBluetoothView;
-import com.bzf.easygame2048.commonutils.LogTool;
 
 import java.io.IOException;
 
@@ -144,6 +144,7 @@ public class BluetoothPresenter {
                 }
             }
         }).start();
+
     }
 
 }

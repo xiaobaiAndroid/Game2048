@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.bzf.easygame2048.entrance.widget.EntranceActivity;
 import com.bzf.easygame2048.commonutils.Config;
+import com.bzf.easygame2048.entrance.widget.EntranceActivity;
 
 /**
  * Created by baizhengfu
